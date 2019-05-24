@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2019 TODOAPP
+  -->
+
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.mvvm.rabin.architecture.mad.todoapp">
+
+    <application
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name="com.mvvm.rabin.architecture.mad.todoapp.tasks.TasksActivity"
+            android:theme="@style/AppTheme.OverlapSystemBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.mvvm.rabin.architecture.mad.todoapp.taskdetail.TaskDetailActivity" />
+        <activity android:name="com.mvvm.rabin.architecture.mad.todoapp.addedittask.AddEditTaskActivity" />
+        <activity
+            android:name="com.mvvm.rabin.architecture.mad.todoapp.statistics.StatisticsActivity"
+            android:parentActivityName="com.mvvm.rabin.architecture.mad.todoapp.tasks.TasksActivity"
+            tools:ignore="UnusedAttribute">
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.mvvm.rabin.architecture.mad.todoapp.tasks.TasksActivity" />
+        </activity>
+    </application>
+
+</manifest>

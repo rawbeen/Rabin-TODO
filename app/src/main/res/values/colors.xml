@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <color name="colorPrimary">#3A574E</color>
+    <color name="colorPrimaryDark">#FF5722</color>
+    <color name="colorAccent">#F44336</color>
+
+    <drawable name="completedTaskBackground">#9C27B0</drawable>
+
+    <drawable name="touchFeedback">#3F51B5</drawable>
+
+</resources>

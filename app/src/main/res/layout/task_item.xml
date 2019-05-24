@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+    ~ Copyright (C) 2019 TODOAPP
+  -->
+<layout xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <data>
+        <import type="android.view.View.OnClickListener" />
+
+        <variable
+            name="task"
+            type="com.mvvm.rabin.architecture.mad.todoapp.data.Task" />
+
+        <variable
+            name="listener"
+            type="com.mvvm.rabin.architecture.mad.todoapp.tasks.TaskItemUserActionsListener" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@{task.completed ? @drawable/list_completed_touch_feedback : @drawable/touch_feedback}"
+        android:onClick="@{() -> listener.onTaskClicked(task)}"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/list_item_padding"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingBottom="@dimen/list_item_padding">
+
+        <CheckBox
+            android:id="@+id/complete"
+            android:layout_width="51dp"
+            android:layout_height="42dp"
+            android:layout_gravity="center_vertical"
+            android:checked="@{task.completed}"
+            android:onClick="@{(view) -> listener.onCompleteChanged(task, view)}" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:text="@{task.titleForList}"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+    </LinearLayout>
+</layout>
